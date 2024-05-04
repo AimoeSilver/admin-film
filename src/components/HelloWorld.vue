@@ -4,6 +4,7 @@
 
     <h3>Installed CLI Plugins</h3>
     <p class="democolor">测试文本</p>
+    <el-button type="primary">This is ele</el-button>
   </div>
 </template>
 
@@ -34,6 +35,7 @@ a {
 }
 .democolor
 {
-  color: $success;
+  color: $warning;
+  font-size: 40px;
 }
 </style>
