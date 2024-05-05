@@ -7,11 +7,34 @@
         <div id="aside-menu">
             <ul>
                 <li >
-                    <i>
-
-                    </i>
+                    <i></i>
                     <span>控制台</span>
                 </li>
+                <li >
+                    <i></i>
+                    <span>电影院</span>
+                </li>
+                <li >
+                    <i></i>
+                    <span>电影排期</span>
+                </li>
+                <li >
+                    <i></i>
+                    <span>会员中心</span>
+                </li>
+                <li >
+                    <i></i>
+                    <span>订单管理</span>
+                </li>
+                <li >
+                    <i></i>
+                    <span>财务报表</span>
+                </li>
+                <li >
+                    <i></i>
+                    <span>系统配置</span>
+                </li>
+
             </ul>
         </div>
     </div>

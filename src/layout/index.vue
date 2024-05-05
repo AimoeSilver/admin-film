@@ -8,7 +8,7 @@
 
             <!-- main part -->
             <el-container>
-                <el-header>
+                <el-header >
                     <header-vue />
                 </el-header>
                 <el-main>
@@ -25,7 +25,7 @@
 import asideVue from './components/aside.vue'
 import headerVue from './components/header.vue'
 import mainVue from './components/main.vue'
-import tabViewsVue from './components/tabViews.vue'
+
 
 export default {
     name: 'Layout',
@@ -33,7 +33,6 @@ export default {
         asideVue,
         headerVue,
         mainVue,
-        tabViewsVue
     },
     data() {
         return {
@@ -72,11 +71,13 @@ export default {
     background-color: #063F5C;
 }
 .el-header {
-    height: 100px;
+    height: 100px !important;
+    padding: 0px;
     background: #FFFFFF;
-    box-shadow: 0px 0px 43px 1px rgba(0,0,0,0.13);
+    
 }
 .el-main {
+    display: block;
     padding: 30px;
 }
 
