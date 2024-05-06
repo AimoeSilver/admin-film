@@ -1,10 +1,13 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import HomeView from "../views/HomeView.vue";
 import Console from "../views/Console.vue";
 import Cinema from "../views/Cinema.vue";
 import Schedule from "../views/Schedule.vue";
 import MemberCenter from "../views/MemberCenter.vue";
+import OrderManagement from "../views/OrderManagement.vue";
+import FinancialStatements from "../views/FinancialStatements.vue";
+import SystemConfig from "../views/SystemConfig.vue";
+
 
 Vue.use(VueRouter);
 
@@ -15,44 +18,60 @@ const routes = [
     component: () => import("../layout"),
     children: [
       {
-        path: "/home",
-        name: "home",
-        mate: {
-          titile: "首页",
-        },
-        component: HomeView,
-      },
-      {
         path: "/console",
         name: "Console",
-        mate: {
-          titile: "控制台",
+        meta: {
+          title: "控制台",
         },
         component: Console,
       },
       {
         path: "/cinema",
         name: "Cinema",
-        mate: {
-          titile: "电影院",
+        meta: {
+          title: "电影院",
         },
         component: Cinema,
       },
       {
         path: "/schedule",
         name: "Schedule",
-        mate: {
-          titile: "电影排期",
+        meta: {
+          title: "电影排期",
         },
         component: Schedule,
       },
       {
         path: "/member",
         name: "MemberCenter",
-        mate: {
-          titile: "会员中心",
+        meta: {
+          title: "会员中心",
         },
         component: MemberCenter,
+      },
+      {
+        path: "/order",
+        name: "OrderManagement",
+        meta: {
+          title: "订单管理",
+        },
+        component: OrderManagement,
+      },
+      {
+        path: "/finance",
+        name: "FinancialStatements",
+        meta: {
+          title: "财务报表",
+        },
+        component: FinancialStatements,
+      },
+      {
+        path: "/config",
+        name: "SystemConfig",
+        meta: {
+          title: "系统配置",
+        },
+        component: SystemConfig,
       },
 
     ],

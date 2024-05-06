@@ -6,34 +6,11 @@
 
         <div id="aside-menu">
             <ul>
-                <li >
+                <li v-for="item in routers" :key="item.path">
                     <i></i>
-                    <span>控制台</span>
+                    <span>{{ item.meta.title}}</span>
                 </li>
-                <li >
-                    <i></i>
-                    <span>电影院</span>
-                </li>
-                <li >
-                    <i></i>
-                    <span>电影排期</span>
-                </li>
-                <li >
-                    <i></i>
-                    <span>会员中心</span>
-                </li>
-                <li >
-                    <i></i>
-                    <span>订单管理</span>
-                </li>
-                <li >
-                    <i></i>
-                    <span>财务报表</span>
-                </li>
-                <li >
-                    <i></i>
-                    <span>系统配置</span>
-                </li>
+
 
             </ul>
         </div>
@@ -45,8 +22,13 @@ export default {
     name: 'Aside',
     data() {
         return {
-            logo: require('@/assets/logo_a.png')
+            logo: require('@/assets/logo_a.png'),
+            routers: []
         }
+    },
+    mounted() {
+        this.routers = this.$router.options.routes[0].children
+        console.log(this.routers)
     }
 }
 </script>
