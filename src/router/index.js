@@ -10,15 +10,16 @@ import SystemConfig from "../views/SystemConfig.vue";
 
 
 Vue.use(VueRouter);
+const pathName = '/user'
 
 const routes = [
   {
-    path: "/",
+    path: `/user`,
     name: "layout",
     component: () => import("../layout"),
     children: [
       {
-        path: "/console",
+        path: `${pathName}/console`,
         name: "Console",
         meta: {
           title: "控制台",
@@ -26,7 +27,7 @@ const routes = [
         component: Console,
       },
       {
-        path: "/cinema",
+        path: `${pathName}/cinema`,
         name: "Cinema",
         meta: {
           title: "电影院",
@@ -34,7 +35,7 @@ const routes = [
         component: Cinema,
       },
       {
-        path: "/schedule",
+        path: `${pathName}/schedule`,
         name: "Schedule",
         meta: {
           title: "电影排期",
@@ -42,7 +43,7 @@ const routes = [
         component: Schedule,
       },
       {
-        path: "/member",
+        path: `${pathName}/member`,
         name: "MemberCenter",
         meta: {
           title: "会员中心",
@@ -50,7 +51,7 @@ const routes = [
         component: MemberCenter,
       },
       {
-        path: "/order",
+        path: `${pathName}/order`,
         name: "OrderManagement",
         meta: {
           title: "订单管理",
@@ -58,7 +59,7 @@ const routes = [
         component: OrderManagement,
       },
       {
-        path: "/finance",
+        path: `${pathName}/finance`,
         name: "FinancialStatements",
         meta: {
           title: "财务报表",
@@ -66,7 +67,7 @@ const routes = [
         component: FinancialStatements,
       },
       {
-        path: "/config",
+        path: `${pathName}/config`,
         name: "SystemConfig",
         meta: {
           title: "系统配置",
@@ -75,6 +76,16 @@ const routes = [
       },
 
     ],
+  },
+  {
+    path: "/login",
+    name: "Login",
+    component: () => import("../views/login/loginView.vue"),
+  },
+  {
+    path: "/",
+    name: "Demo",
+    component: () => import("../components/PhoneNumberInput.vue"),
   },
 ];
 

@@ -4,14 +4,16 @@
             <img :src="logo" alt="firm logo">
         </h1>
 
-        <div id="aside-menu">
+        <div id="aside-menu" class="hide-scrollbar">
             <ul>
-                <li v-for="item in routers" :key="item.path">
+                <li v-for="item in routers" :key="item.path" @click="handleJunp(item.path)">
                     <i></i>
-                    <span>{{ item.meta.title}}</span>
+                    <router-link id="span" :to="item.path">
+                        <span>
+                            {{ item.meta.title }}
+                        </span>
+                    </router-link>
                 </li>
-
-
             </ul>
         </div>
     </div>
@@ -27,8 +29,18 @@ export default {
         }
     },
     mounted() {
+        
         this.routers = this.$router.options.routes[0].children
-        console.log(this.routers)
+
+    },
+    methods: {
+        // 带点脑子的 jump
+        handleJunp(path) {
+            const currentpath = this.$router.history.current.path
+            if (currentpath !== path) {
+                this.$router.push(path)
+            }
+        }
     }
 }
 </script>
@@ -55,9 +67,9 @@ export default {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        
+
         box-sizing: border-box;
-        
+
         i {
             background-color: #fff;
             width: 20px;
@@ -67,15 +79,19 @@ export default {
         li {
             display: flex;
             align-items: center;
-            justify-content:center ;
+            justify-content: center;
             flex-direction: column;
             height: 113px;
             width: 100%;
             color: #fff;
             font-size: 15px;
             opacity: 0.8;
-            span {
+
+            #span {
+                width: 100%;
                 padding-top: 11px;
+                color: #fff;
+                text-decoration: none;
             }
 
             &:hover {
@@ -85,5 +101,21 @@ export default {
         }
 
     }
+}
+
+// other css
+/* src/assets/css/styles.css 或其他 CSS 文件 */
+.hide-scrollbar {
+    overflow-y: scroll;
+    /* 或 auto，根据需要调整 */
+    -ms-overflow-style: none;
+    /* IE 和 Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+    /* 隐藏 WebKit 内核浏览器的滚动条 */
 }
 </style>
