@@ -10,5 +10,5 @@ export function setToken(token) {
 
 // 获取token
 export function getToken() {
-    return Cookies.get(TOKEN);
+    return Cookies.get(`token`);
 }
